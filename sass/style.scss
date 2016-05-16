@@ -1,0 +1,239 @@
+$bg-color: #ffffff;
+$font-color: #333333;
+$font-size: 14px;
+$link-color: blue;
+
+
+@mixin column($max-width) {
+  width: 100%;
+  max-width: $max-width;
+  display: inline-block;
+  vertical-align: top;
+}
+@mixin columnLayout {
+  text-align: left;
+  font-size: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@mixin columnImage($size) {
+  width: 100%;
+  max-width: $size;
+  height: auto;
+}
+@mixin contents {
+  font-size: $font-size;
+  text-align: left;
+}
+
+body {
+  Margin: 0;
+  padding: 0;
+  min-width: 100%;
+  background-color: $bg-color;
+}
+table {
+  border-spacing: 0;
+  font-family: sans-serif;
+  color: $font-color;
+}
+
+td {
+  padding: 0;
+}
+img {
+  border: 0;
+}
+.wrapper {
+  width: 100%;
+  table-layout: fixed;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+.webkit {
+  max-width: 600px;
+}
+.outer {
+  Margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+.full-width-image img {
+  @include columnImage(600px);
+}
+.inner {
+  padding: 10px;
+}
+.contents {
+  width: 100%;
+}
+p {
+  Margin: 0;
+}
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+@mixin headers ($size, $weight, $mbottom, $lheight) {
+  font-size: $size;
+  font-weight: $weight;
+  Margin-bottom: $mbottom;
+  line-height: $lheight;
+}
+.contents .h1 {
+  @include headers(21px, bold, 18px, 1.2);
+}
+.contents .h2 {
+  @include headers(18px, bold, 12px, 1.2);
+}
+/*Nested layout*/
+.nested {
+  @include columnLayout;
+}
+.nested .contents {
+  font-size: 12px;
+  text-align: left;
+}
+.nested .nested-text {
+  padding-top: 10px;
+  font-size: 12px;
+  color: #999;
+}
+.nested .column-25 {
+  @include column(150px);
+}
+.nested .column-75 {
+  @include column(440px);
+}
+
+/* One column layout */
+.one-column .contents {
+  text-align: left;
+}
+.one-column p {
+  font-size: $font-size;
+  Margin-bottom: 10px;
+}
+.one-column p {
+  font-size: $font-size;
+}
+
+
+/*Two column layout*/
+.two-column {
+  @include columnLayout;
+}
+.two-column .contents {
+  @include contents;
+}
+.two-column .column-50 {
+  @include column(300px);
+}
+.two-column img {
+  @include columnImage(280px);
+}
+.two-column .text {
+  padding-top: 10px;
+}
+/*Multi-column layout*/
+.multi-column {
+  @include columnLayout;
+}
+.multi-column .column-20 {
+  @include column(120px);
+}
+.multi-column .column-20 img {
+  @include columnImage(100px);
+}
+.multi-column .column-30 {
+  @include column(180px);
+}
+.multi-column .column-30 img {
+  @include columnImage(160px);
+}
+.multi-column .column-40 {
+  @include column(240px);
+}
+.multi-column .column-40 img {
+  @include columnImage(220px);
+}
+.multi-column .column-60 {
+  @include column(360px);
+}
+.multi-column .column-60 img {
+  @include columnImage(340px);
+}
+.multi-column .column-70 {
+  @include column(420px);
+}
+.multi-column .column-70 img{
+  @include columnImage(400px);
+}
+.multi-column .column-80 {
+  @include column(480px);
+}
+.multi-column .column-80 img{
+  @include columnImage(460px);
+}
+.multi-column .contents {
+  @include contents;
+}
+.multi-column .text {
+  padding-top: 10px;
+}
+/*Three column layout*/
+.three-column {
+  @include columnLayout;
+}
+.three-column .column {
+  @include column(200px);
+}
+.three-column .contents {
+  @include contents;
+}
+.three-column img {
+  @include columnImage(180px);
+}
+.three-column .text {
+  padding-top: 10px;
+}
+/*four column layout*/
+.four-column {
+  @include columnLayout;
+}
+.four-column .column {
+  @include column(150px);
+}
+.four-column .contents {
+  @include contents;
+}
+.four-column img {
+  @include columnImage(1300px);
+}
+.four-column .text {
+  padding-top: 10px;
+}
+
+/*five column layout*/
+.five-column {
+  @include columnLayout;
+}
+.five-column .column {
+  @include column(120px);
+}
+.five-column .contents {
+  @include contents;
+}
+.five-column img {
+  @include columnImage(100px);
+}
+.five-column .text {
+  padding-top: 10px;
+}
+/*footer layout*/
+.footer {
+  background-color: #f3f3f3;
+}
+.footer p {
+  font-size:11px;
+}
