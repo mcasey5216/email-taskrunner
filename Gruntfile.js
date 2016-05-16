@@ -6,6 +6,10 @@ module.exports = function(grunt) {
       sass: {
         files: 'sass/*.scss',
         tasks: ['sass']
+      },
+      pug: {
+        files: 'jade/*.jade',
+        tasks: ['pug']
       }
     },
     concat: {
@@ -23,14 +27,36 @@ module.exports = function(grunt) {
           'css/style.css' : 'sass/style.scss'
         }
       }
-    }
+    },
+    pug: {
+          compile: {
+              options: {
+                  client: false,
+                  pretty: true,
+                  data: {
+                      debug: false
+                  }
+              },
+              files: [
+              {
+                  'dist/index.html': ['jade/index.jade']
+              },
+              {
+                  src: "jade/*.jade",
+                  dest: "dist",
+                  expand: true,
+                  ext: ".html"
+              } ]
+          }
+      }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-pug');
 
 
-  grunt.registerTask('default', ['concat']);
+  grunt.registerTask('default', ['sass','pug']);
 
 };
