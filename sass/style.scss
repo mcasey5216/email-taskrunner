@@ -1,9 +1,10 @@
+@import 'aycl_justadded';
+
 $bg-color: #ffffff;
 $font-color: #333333;
 $font-size: 14px;
 $link-color: blue;
 $uie-red: #951a1d;
-
 
 @mixin column($max-width) {
   width: 100%;
@@ -62,6 +63,13 @@ td {
 img {
   border: 0;
 }
+p {
+  Margin: 0;
+}
+a {
+  color: $link-color;
+  text-decoration: none;
+}
 .wrapper {
   width: 100%;
   table-layout: fixed;
@@ -85,13 +93,8 @@ img {
 .contents {
   width: 100%;
 }
-p {
-  Margin: 0;
-}
-a {
-  color: $link-color;
-  text-decoration: none;
-}
+
+//headers
 @mixin headers ($size, $weight, $mbottom, $lheight) {
   font-size: $size;
   font-weight: $weight;
@@ -171,8 +174,13 @@ a {
   font-size: $font-size;
   Margin-bottom: 10px;
 }
-.one-column p {
+.one-column li {
   font-size: $font-size;
+  Margin-bottom: 5px;
+}
+.one-column ul {
+  font-size: $font-size;
+  Margin-bottom: 10px;
 }
 
 

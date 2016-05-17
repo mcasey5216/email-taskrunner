@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         tasks: ['sass']
       },
       pug: {
-        files: 'jade/*.jade',
+        files: 'pug/*.pug',
         tasks: ['pug']
       }
     },
@@ -38,11 +38,11 @@ module.exports = function(grunt) {
                   }
               },
               files: [
+              // {
+              //     'dist/index.html': ['pug/index.pug', 'pug/includes/*.pug']
+              // },
               {
-                  'dist/index.html': ['jade/index.jade']
-              },
-              {
-                  src: "jade/*.jade",
+                  src: "pug/*.pug",
                   dest: "dist",
                   expand: true,
                   ext: ".html"

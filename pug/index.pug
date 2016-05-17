@@ -7,7 +7,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
     <!--<![endif]-->
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title= pageTitle
-    link(rel="stylesheet" type="text/css" href="../css/style.css")
+    link(rel="stylesheet" type="text/css" href="../../css/style.css")
     <!--[if (gte mso 9)|(IE)]>
     <style type="text/css">table {border-collapse: collapse;}</style>
     <![endif]-->
@@ -447,21 +447,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                             p.button-wrapper
                               a.button(href="http://") Button
-          tr
-            td.one-column
-              table(width="100%")
-                tr
-                  td.inner.contents.footer 
-                    p Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved. <br>
-                    p
-                      | User Interface Engineering<br>
-                      | 510 Turnpike Street<br>
-                      | Suite 102<br>
-                      | North Andover, MA 01845
-                    p
-                      a(href="*|UPDATE_PROFILE|*") manage your preferences
-                      | &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                      a(href="*|UNSUB|*") unsubscribe from this list
+          include includes/footer.pug
                                 
         <!--[if (gte mso 9)|(IE)]>
         </td>

@@ -1,0 +1,42 @@
+.aycl {
+  .inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .block {
+    background-color:#ffffff;
+    padding-top:40px;
+    padding-bottom:40px;
+    padding-left:40px;
+    padding-right:40px;
+  }
+  /*Image layout*/
+  .image {
+    text-align:center;
+  }
+  .image img {
+    max-width: 400px;
+    padding-bottom: 10px;
+  }
+
+  /* One column layout */
+  .one-column {
+    background-color: #f3f3f3;
+  }
+  /*Nested layout*/
+  .inner-nested {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+  /*Three column layout*/
+  .three-column {
+    text-align: left;
+    font-size: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
