@@ -29,7 +29,7 @@ In the terminal from the main directory, run `grunt watch` to make and view any 
 
 1. Start but duplicating the `pug/index.pug` file and rename it the name of the campaign. e.g. `pug/{campaign_name}.pug`.
 2. Make the associated sass file in `sass/_{campaign_name}.scss`.  Don't forget the underscore at the beginning of the file name
-3. In the `sass/style.scss` file add `@import '{campaign_name}';` to the top. Do not include the underscore or the `.scss` in this path name.
+3. In the `sass/style.scss` file add `@import '{campaign_name}';` to the top. Do not include the underscore or the `.scss` in this path name. Comment out the imports that are not in use.
 4. In the `sass/_{campaign_name}.scss` file, nest all of the contents into a larger class.  e.g.
         .aycl {
           .inner {
