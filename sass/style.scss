@@ -2,6 +2,7 @@ $bg-color: #ffffff;
 $font-color: #333333;
 $font-size: 14px;
 $link-color: blue;
+$uie-red: #951a1d;
 
 
 @mixin column($max-width) {
@@ -41,45 +42,6 @@ $link-color: blue;
   width:$button-width;
   -webkit-text-size-adjust:none;
   mso-hide:all;
-}
-
-// buttons
-.button-wrapper {
-  padding-top: 10px;
-  text-align: center;
-}
-.one-column .button {
-  @include button(#b50d3c, #1e3650, 14px, 300px);
-}
-.two-column .button {
-  @include button(#b50d3c, #1e3650, 14px, 250px);
-}
-.three-column .button {
-  @include button(#b50d3c, #1e3650, 14px, 165px);
-}
-.four-column .button {
-  @include button(#b50d3c, #1e3650, 14px, 125px);
-}
-.five-column .button {
-  @include button(#b50d3c, #1e3650, 14px, 100px);
-}
-.multi-column .column-20 .button {
-  @include button(#b50d3c, #1e3650, 14px, 100px);
-}
-.multi-column .column-30 .button {
-  @include button(#b50d3c, #1e3650, 14px, 130px);
-}
-.multi-column .column-40 .button {
-  @include button(#b50d3c, #1e3650, 14px, 180px);
-}
-.multi-column .column-60 .button {
-  @include button(#b50d3c, #1e3650, 14px, 285px);
-}
-.multi-column .column-70 .button {
-  @include button(#b50d3c, #1e3650, 14px, 300px);
-}
-.multi-column .column-80 .button {
-  @include button(#b50d3c, #1e3650, 14px, 300px);
 }
 
 body {
@@ -141,6 +103,45 @@ a {
 }
 .contents .h2 {
   @include headers(18px, bold, 12px, 1.2);
+}
+
+// buttons
+.button-wrapper {
+  padding-top: 10px;
+  text-align: center;
+}
+.one-column .button {
+  @include button($uie-red, #1e3650, 14px, 300px);
+}
+.two-column .button {
+  @include button($uie-red, #1e3650, 14px, 250px);
+}
+.three-column .button {
+  @include button($uie-red, #1e3650, 14px, 165px);
+}
+.four-column .button {
+  @include button($uie-red, #1e3650, 14px, 125px);
+}
+.five-column .button {
+  @include button($uie-red, #1e3650, 14px, 100px);
+}
+.multi-column .column-20 .button {
+  @include button($uie-red, #1e3650, 14px, 100px);
+}
+.multi-column .column-30 .button {
+  @include button($uie-red, #1e3650, 14px, 130px);
+}
+.multi-column .column-40 .button {
+  @include button($uie-red, #1e3650, 14px, 180px);
+}
+.multi-column .column-60 .button {
+  @include button($uie-red, #1e3650, 14px, 285px);
+}
+.multi-column .column-70 .button {
+  @include button($uie-red, #1e3650, 14px, 300px);
+}
+.multi-column .column-80 .button {
+  @include button($uie-red, #1e3650, 14px, 300px);
 }
 /*Nested layout*/
 .nested {
