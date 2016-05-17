@@ -5,12 +5,18 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: 'sass/*.scss',
-        tasks: ['sass']
+        tasks: ['sass'],
+        options: {
+          livereload: true
+        },
       },
       pug: {
         files: 'pug/*.pug',
-        tasks: ['pug']
-      }
+        tasks: ['pug'],
+        options: {
+          reload: true
+        },
+      },
     },
     concat: {
       options: {
