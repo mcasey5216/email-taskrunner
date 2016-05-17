@@ -1,0 +1,80 @@
+.article {
+  background-color: #222222;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .webkit {
+    background-color: #F4F4F4;
+  }
+  .inner {
+    padding-bottom: 0;
+  }
+  .author {
+    font-size: 16px;
+  }
+  .origin {
+    padding-bottom: 15px;
+  }
+  .one-column{
+    padding: 20px;
+  }
+  .body {
+    line-height: 1.5;
+    padding-bottom: 15px;
+  }
+  .ad{
+    padding-top: 10px;
+  }
+  .h2.about {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .about-img {
+    padding-left: 20px;
+  }
+  .about-bio .text {
+    padding-top: 0px;
+  }
+  .about-bio .body {
+    color: #505050;
+    line-height: 1.75;
+    font-size: 13px;
+  }
+  .share-thoughts .question {
+    color: #505050;
+    line-height: 1.75;
+    font-size: 13px;
+  }
+  .share-article {
+    padding-bottom: 5px;
+    margin-bottom: 0;
+  }
+  .multi-column {
+    padding-top: 0;
+  }
+  .one-column.about-the-author-header {
+    padding-top: 30px;
+    border-top-color: #cccccc;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  .multi-column.about-the-author-content {
+    padding-bottom: 30px;
+    border-bottom-color: #cccccc;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .one-column.share-thoughts {
+    padding-bottom: 30px;
+    border-bottom-color: #cccccc;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .social {
+    display: inline;
+  }
+  .social img {
+    width:25px;
+    padding-right: 20px;
+  }
+}

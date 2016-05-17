@@ -1,4 +1,4 @@
-@import 'aycl_justadded';
+@import 'article';
 
 $bg-color: #ffffff;
 $font-color: #333333;
@@ -88,7 +88,10 @@ a {
   @include columnImage(600px);
 }
 .inner {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .contents {
   width: 100%;
@@ -102,10 +105,16 @@ a {
   line-height: $lheight;
 }
 .contents .h1 {
-  @include headers(21px, bold, 18px, 1.2);
+  @include headers(26px, bold, 18px, 1.2);
 }
 .contents .h2 {
-  @include headers(18px, bold, 12px, 1.2);
+  @include headers(22px, bold, 12px, 1.2);
+}
+.contents .h3 {
+  @include headers(19px, bold, 12px, 1.2);
+}
+.contents .h4 {
+  @include headers(16px, bold, 12px, 1.2);
 }
 
 // buttons
@@ -156,6 +165,7 @@ a {
 }
 .nested .nested-text {
   padding-top: 10px;
+  padding-left: 20px;
   font-size: 12px;
   color: #999;
 }
@@ -180,7 +190,6 @@ a {
 }
 .one-column ul {
   font-size: $font-size;
-  Margin-bottom: 10px;
 }
 
 
@@ -210,6 +219,12 @@ a {
 .multi-column .column-20 img {
   @include columnImage(100px);
 }
+.multi-column .column-25 {
+  @include column(150px);
+}
+.multi-column .column-25 img {
+  @include columnImage(130px);
+}
 .multi-column .column-30 {
   @include column(180px);
 }
@@ -233,6 +248,12 @@ a {
 }
 .multi-column .column-70 img{
   @include columnImage(400px);
+}
+.multi-column .column-75 {
+  @include column(440px);
+}
+.multi-column .column-75 img{
+  @include columnImage(420px);
 }
 .multi-column .column-80 {
   @include column(480px);

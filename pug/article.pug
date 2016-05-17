@@ -1,0 +1,147 @@
+- var nestedSubjectLine = "Converting visitors into customers"
+
+- var articleTitle = " "
+- var author = " "
+- var origin = 'Originally published on <a href="">Startup Grind</a>, the global entrepreneurship community.'
+
+
+
+doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    <!--[if !mso]><!-->
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    <!--<![endif]-->
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= pageTitle
+    link(rel="stylesheet" type="text/css" href="../../css/style.css")
+    <!--[if (gte mso 9)|(IE)]>
+    <style type="text/css">table {border-collapse: collapse;}</style>
+    <![endif]-->
+  body
+    style(type="text/css" media="screen")
+      include ../css/style.css
+    center.wrapper.article
+      div.webkit
+        <!--[if (gte mso 9)|(IE)]>
+        <table width="600" align="center">
+        <tr>
+        <td>
+        <![endif]-->
+        table.outer(align="center")
+
+          //- NESTED
+          tr
+            td.nested
+              <!--[if (gte mso 9)|(IE)]>
+              <table width="100%">
+              <tr>
+              <td width="70%" valign="top">
+              <![endif]-->
+              div.column-75
+                table(width="100%")
+                  tr
+                    td.inner-nested
+                      table.contents
+                        tr
+                          td.nested-text #{nestedSubjectLine}
+              <!--[if (gte mso 9)|(IE)]>
+              </td><td width="25%" valign="top">
+              <![endif]-->
+              div.column-25
+                table(width="100%")
+                  tr
+                    td.inner-nested
+                      table.contents
+                        tr
+                          td.nested-text
+                            a View in Browser
+              <!--[if (gte mso 9)|(IE)]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+
+          tr
+            td
+              table.outer(align="center")
+                tr
+                  td.full-width-image
+                    img(src="http://asset.uie.com/uietips/uie-header.png" width="600" alt="UIE Article of the Week")
+          tr
+            td.one-column
+              table(width="100%")
+                tr
+                  td.inner.contents
+                    p.h1 The Three Reasons Why Your Visitors Don't Convert
+                    p.author by Laura Klein
+                    p.origin
+                      em !{origin}
+
+                    include includes/article-content/05_11_16.pug
+          tr
+            td.one-column.about-the-author-header
+              table(width="100%")
+                tr
+                  td.inner.contents
+                    p.h2.about About the Author
+          tr
+            td.multi-column.about-the-author-content
+              <!--[if (gte mso 9)|(IE)]>
+              <table width="100%">
+              <tr>
+              <td width="25%" valign="top">
+              <![endif]-->
+              div.column-25
+                table(width="100%")
+                  tr
+                    td.inner
+                      table.contents.about-img
+                        tr
+                          td
+                            img(src="https://aycl.uie.com/images/made/images/uploads/head_shots/Klein_132_132_s_c1.png" width="130" alt="image")
+              <!--[if (gte mso 9)|(IE)]>
+              </td><td width="75%" valign="top">
+              <![endif]-->
+              div.column-75
+                table(width="100%")
+                  tr
+                    td.inner
+                      table.contents.about-bio
+                        tr
+                          td.text
+                            p.body.
+                              Laura Klein is a User Experience Designer, Product Manager, and Lean Startup expert in Silicon Valley, where she advises startups and helps companies build products people will love. Her blog, Users Know, and her book, UX for Lean Startups, are aimed at helping entrepreneurs learn enough research and design to let them validate their ideas.
+          tr
+            td.one-column.share-thoughts
+              table(width="100%")
+                tr
+                  td.inner.contents
+                    p.h2 Share Your Thoughts with Us
+                    p.body.question
+                      | How do you identify conversion road blocks? Tell us about it at the&nbsp;
+                      a(href="#") UIE blog.
+                    p.body.share-article.
+                      Share This Article:
+                    div.social
+                      a(href="https://articles.uie.com/the-three-reasons-why-your-visitors-dont-convert/")
+                        img(src="http://www.uie.com/email/img/icon-email.jpg", alt="")
+                      a(href="http://www.facebook.com/sharer/sharer.php?u=https://articles.uie.com/the-three-reasons-why-your-visitors-dont-convert/")
+                        img(src="http://asset.uie.com/uietips/social_media_logos/facebook.png", alt="")
+                      a(href="http://twitter.com/?status=https://articles.uie.com/the-three-reasons-why-your-visitors-dont-convert/")
+                        img(src="http://www.uie.com/email/img/icon-twitter-new.png", alt="")
+                      a(href="http://www.linkedin.com/shareArticle?mini=true&url=https://articles.uie.com/the-three-reasons-why-your-visitors-dont-convert/")
+                        img(src="http://asset.uie.com/uietips/social_media_logos/linkedin.png", alt="")
+                      a(href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://articles.uie.com/the-three-reasons-why-your-visitors-dont-convert/")
+                        img(src="http://www.uie.com/email/img/google-plus-logo.png", alt="")
+
+
+
+          include includes/footer.pug
+
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->

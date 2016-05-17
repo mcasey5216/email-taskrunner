@@ -37,11 +37,11 @@ In the terminal from the main directory, run `grunt watch` to make and view any 
           }
         }
 This will override general template formatting where necessary.
-5. In the `pug/{campaign_name}.pug`, add the class the the "outer" table.  See below:
+5. In the `pug/{campaign_name}.pug`, add the class the `center.wrapper` tag.  See below:
         body
-        center.wrapper
+        center.wrapper.aycl
           div.webkit
-            table.outer.aycl(align="center")
+            table.outer(align="center")
 6. Edit the `{campaign_name}.pug` and `{campaign_name}.scss` file as needed.  Run `grunt` in the terminal for the compiled Mailchimp ready `HTNL` document found in `dist/pug/{campaign_name}.html`
 
 
@@ -53,8 +53,10 @@ This will override general template formatting where necessary.
 ## Concerns
 - Is this overly complicated still, is there an even simpler way to run these tasks?
 - Is this beneficial to "one time" emails, or better for long lasting reoccurring campaigns?
+- How do I fix the file structure so it will only run what needs to be run?
 
 ## Todo
 - [html entities](https://www.npmjs.com/package/grunt-htmlentities)
 - css inlining - optional grunt command for testing templates
 - markdown readability
+- have the css include only include the necessary css

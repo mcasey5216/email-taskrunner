@@ -1,36 +1,62 @@
-.aycl {
-  /*Image layout*/
-  /* One column layout */
-  /*Nested layout*/
-  /*Three column layout*/ }
-  .aycl .inner {
+.article {
+  background-color: #222222;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  .article .webkit {
+    background-color: #F4F4F4; }
+  .article .inner {
+    padding-bottom: 0; }
+  .article .author {
+    font-size: 16px; }
+  .article .origin {
+    padding-bottom: 15px; }
+  .article .one-column {
+    padding: 20px; }
+  .article .body {
+    line-height: 1.5;
+    padding-bottom: 15px; }
+  .article .ad {
+    padding-top: 10px; }
+  .article .h2.about {
+    padding-bottom: 0;
+    margin-bottom: 0; }
+  .article .about-img {
+    padding-left: 20px; }
+  .article .about-bio .text {
+    padding-top: 0px; }
+  .article .about-bio .body {
+    color: #505050;
+    line-height: 1.75;
+    font-size: 13px; }
+  .article .share-thoughts .question {
+    color: #505050;
+    line-height: 1.75;
+    font-size: 13px; }
+  .article .share-article {
+    padding-bottom: 5px;
+    margin-bottom: 0; }
+  .article .multi-column {
+    padding-top: 0; }
+  .article .one-column.about-the-author-header {
     padding-top: 30px;
+    border-top-color: #cccccc;
+    border-top-width: 1px;
+    border-top-style: solid; }
+  .article .multi-column.about-the-author-content {
     padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 30px; }
-  .aycl .block {
-    background-color: #ffffff;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px; }
-  .aycl .image {
-    text-align: center; }
-  .aycl .image img {
-    max-width: 400px;
-    padding-bottom: 10px; }
-  .aycl .one-column {
-    background-color: #f3f3f3; }
-  .aycl .inner-nested {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 10px; }
-  .aycl .three-column {
-    text-align: left;
-    font-size: 0;
-    padding-top: 10px;
-    padding-bottom: 10px; }
+    border-bottom-color: #cccccc;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; }
+  .article .one-column.share-thoughts {
+    padding-bottom: 30px;
+    border-bottom-color: #cccccc;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; }
+  .article .social {
+    display: inline; }
+  .article .social img {
+    width: 25px;
+    padding-right: 20px; }
 
 body {
   Margin: 0;
@@ -76,19 +102,34 @@ a {
   height: auto; }
 
 .inner {
-  padding: 10px; }
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .contents {
   width: 100%; }
 
 .contents .h1 {
-  font-size: 21px;
+  font-size: 26px;
   font-weight: bold;
   Margin-bottom: 18px;
   line-height: 1.2; }
 
 .contents .h2 {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  Margin-bottom: 12px;
+  line-height: 1.2; }
+
+.contents .h3 {
+  font-size: 19px;
+  font-weight: bold;
+  Margin-bottom: 12px;
+  line-height: 1.2; }
+
+.contents .h4 {
+  font-size: 16px;
   font-weight: bold;
   Margin-bottom: 12px;
   line-height: 1.2; }
@@ -286,6 +327,7 @@ a {
 
 .nested .nested-text {
   padding-top: 10px;
+  padding-left: 20px;
   font-size: 12px;
   color: #999; }
 
@@ -314,8 +356,7 @@ a {
   Margin-bottom: 5px; }
 
 .one-column ul {
-  font-size: 14px;
-  Margin-bottom: 10px; }
+  font-size: 14px; }
 
 /*Two column layout*/
 .two-column {
@@ -360,6 +401,17 @@ a {
   max-width: 100px;
   height: auto; }
 
+.multi-column .column-25 {
+  width: 100%;
+  max-width: 150px;
+  display: inline-block;
+  vertical-align: top; }
+
+.multi-column .column-25 img {
+  width: 100%;
+  max-width: 130px;
+  height: auto; }
+
 .multi-column .column-30 {
   width: 100%;
   max-width: 180px;
@@ -402,6 +454,17 @@ a {
 .multi-column .column-70 img {
   width: 100%;
   max-width: 400px;
+  height: auto; }
+
+.multi-column .column-75 {
+  width: 100%;
+  max-width: 440px;
+  display: inline-block;
+  vertical-align: top; }
+
+.multi-column .column-75 img {
+  width: 100%;
+  max-width: 420px;
   height: auto; }
 
 .multi-column .column-80 {
