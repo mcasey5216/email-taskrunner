@@ -46,10 +46,29 @@ This will override general template formatting where necessary.
 
 ### Standards
 
-**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the variabling table cell widths.  
+**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths.  
 
     p.button-wrapper
       a.button(href="http://") Button Content
+
+**Pug Interpolation**: Know the difference between when to use the string interpolation, i.e. `#{ varName }` and not.  A general rule of thumb is that if it would have been in quotes if it were hard coded, it does not need the interpolation brackets.
+
+Examples
+
+    - var text = "this text"
+    - var linkText = "that text"
+    - var link = "http://"
+
+    p.copy #{text}
+      a(href=link) #{linkText}
+
+will compile to
+
+    <p class="copy">
+      this text
+      <a href="http://">that text</a>
+    </p>
+
 
 ## Bugs
 - livereload in grunt watch is not working

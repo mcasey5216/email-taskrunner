@@ -1,3 +1,6 @@
+include includes/nested.pug
+include includes/header.pug
+
 - var pageTitle = "Just Added to the AYCL Library"
 - var headerSource = "http://asset.uie.com/img/AYCL/vs-banner.png"
 - var headerAlt = "All You Can Learn"
@@ -9,8 +12,7 @@ mixin body
   div.block
     p.h1 New in the All You Can Learn&nbsp;Library:
     p.h2
-    a(href=link) Navigating Challenging Content Strategy&nbsp;Conversations
-    p
+      a(href=link) Navigating Challenging Content Strategy&nbsp;Conversations
     p Ahava Leibtag shares an approach for creating the right environment to give critical feedback without putting people on the&nbsp;defensive.
 
     p.spacer <br><hr><br>
@@ -34,6 +36,7 @@ mixin body
     p
       a(href="https://aycl.uie.com/virtual_seminars/subscribe/nav") Subscribe
       | &nbsp;to the All You Can Learn Library for $23/month or get access to just this recording for only&nbsp;$16.
+
 
 //- #########################################################
 //- BEGINNING OF TEMPLATE, EDIT BELOW THIS LINE WITH CAUTION
@@ -64,44 +67,10 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
         table.outer(align="center")
 
           // nested
-          tr
-            td.nested
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="70%" valign="top">
-              <![endif]-->
-              div.column-75
-                table(width="100%")
-                  tr
-                    td.inner-nested
-                      table.contents
-                        tr
-                          td.nested-text #{nestedSubjectLine}
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="25%" valign="top">
-              <![endif]-->
-              div.column-25
-                table(width="100%")
-                  tr
-                    td.inner-nested
-                      table.contents
-                        tr
-                          td.nested-text
-                            a(href="*|ARCHIVE|*") View&nbsp;in&nbsp;Browser
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
+          +nested(nestedSubjectLine)
 
           // header
-          tr
-            td
-              table.outer(align="center")
-                tr
-                  td.full-width-image
-                    img(src=headerSource alt=headerAlt width="600")
+          +header(headerSource, headerAlt)
 
           // body
           tr
@@ -110,46 +79,6 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                 tr
                   td.inner.contents
                     +body
-          //- tr
-          //-   td.two-column
-          //-     <!--[if (gte mso 9)|(IE)]>
-          //-     <table width="100%">
-          //-     <tr>
-          //-     <td width="50%" valign="top">
-          //-     <![endif]-->
-          //-     div.block
-          //-       div.column-50
-          //-         table(width="100%")
-          //-           tr
-          //-             td.inner
-          //-               table.contents
-          //-                 tr
-          //-                   td
-          //-                     img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="180" alt="image")
-          //-                 tr
-          //-                   td.text
-          //-                     p.h2 1/2 Two-Column
-          //-                     p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-          //-       <!--[if (gte mso 9)|(IE)]>
-          //-       </td><td width="50%" valign="top">
-          //-       <![endif]-->
-          //-       div.column-50
-          //-         table(width="100%")
-          //-           tr
-          //-             td.inner
-          //-               table.contents
-          //-                 tr
-          //-                   td
-          //-                     img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="280" alt="image")
-          //-                 tr
-          //-                   td.text
-          //-                     p.h2 1/2 Two-Column
-          //-                     p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-          //-     <!--[if (gte mso 9)|(IE)]>
-          //-     </td>
-          //-     </tr>
-          //-     </table>
-          //-     <![endif]-->
 
           // footer
           include includes/footer.pug
