@@ -44,10 +44,14 @@ This will override general template formatting where necessary.
             table.outer(align="center")
 6. Edit the `{campaign_name}.pug` and `{campaign_name}.scss` file as needed.  Run `grunt` in the terminal for the compiled Mailchimp ready `HTNL` document found in `dist/pug/{campaign_name}.html`
 
+### Standards
 
+**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the variabling table cell widths.  
+
+    p.button-wrapper
+      a.button(href="http://") Button Content
 
 ## Bugs
-- Pug will not interpolate variables in the attributes of tags when converting `pug` into `HTML`
 - livereload in grunt watch is not working
 
 ## Concerns

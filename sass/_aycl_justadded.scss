@@ -1,3 +1,5 @@
+@import 'mixins/mixins';
+
 .aycl {
   .inner {
     padding-top: 30px;
@@ -39,4 +41,21 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  /*Two column layout*/
+  .two-column {
+    @include columnLayout;
+  }
+  .two-column .contents {
+    @include contents;
+  }
+  .two-column .column-50 {
+    @include column(260px);
+  }
+  .two-column img {
+    @include columnImage(180px);
+  }
+  .two-column .text {
+    padding-top: 10px;
+  }
+
 }

@@ -4,6 +4,41 @@
 
 - var nestedSubjectLine = "Ahava Leibtag, in the All You Can Learn Library"
 
+mixin body
+  - var link = "https://aycl.uie.com/virtual_seminars/content_strategy_conversations"
+  div.block
+    p.h1 New in the All You Can Learn&nbsp;Library:
+    p.h2
+    a(href=link) Navigating Challenging Content Strategy&nbsp;Conversations
+    p
+    p Ahava Leibtag shares an approach for creating the right environment to give critical feedback without putting people on the&nbsp;defensive.
+
+    p.spacer <br><hr><br>
+
+    p.image
+      a(href=link)
+        img(src="http://asset.uie.com/emails/img/ahava-slide.png" width="400" alt="Ahava First Slide")
+
+    p In this seminar, Ahava will explain how&nbsp;to:
+
+    ul
+      li Create a model for delivering feedback that builds team and client&nbsp;relationships
+      li Help clients articulate critical&nbsp;feedback
+      li Learn what feedback is valuable to your practice, and what&nbsp;isn&rsquo;t
+
+    p.button-wrapper
+      a.button(href=link) Watch This
+
+    p.spacer <br><hr><br>
+
+    p
+      a(href="https://aycl.uie.com/virtual_seminars/subscribe/nav") Subscribe
+      | &nbsp;to the All You Can Learn Library for $23/month or get access to just this recording for only&nbsp;$16.
+
+//- #########################################################
+//- BEGINNING OF TEMPLATE, EDIT BELOW THIS LINE WITH CAUTION
+//- #########################################################
+
 doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
 html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
   head
@@ -66,7 +101,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
               table.outer(align="center")
                 tr
                   td.full-width-image
-                    img(src="http://asset.uie.com/img/AYCL/vs-banner.png" alt="#{headerAlt}" width="600")
+                    img(src=headerSource alt=headerAlt width="600")
 
           // body
           tr
@@ -74,46 +109,50 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
               table(width="100%")
                 tr
                   td.inner.contents
-                    div.block
-                      p.h1 New in the All You Can Learn&nbsp;Library:
-                      p.h2
-                      a(href="https://aycl.uie.com/virtual_seminars/content_strategy_conversations") Navigating Challenging Content Strategy&nbsp;Conversations
-                      p
-                      p Ahava Leibtag shares an approach for creating the right environment to give critical feedback without putting people on the&nbsp;defensive.
-                      p.spacer <br><hr><br>
+                    +body
+          //- tr
+          //-   td.two-column
+          //-     <!--[if (gte mso 9)|(IE)]>
+          //-     <table width="100%">
+          //-     <tr>
+          //-     <td width="50%" valign="top">
+          //-     <![endif]-->
+          //-     div.block
+          //-       div.column-50
+          //-         table(width="100%")
+          //-           tr
+          //-             td.inner
+          //-               table.contents
+          //-                 tr
+          //-                   td
+          //-                     img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="180" alt="image")
+          //-                 tr
+          //-                   td.text
+          //-                     p.h2 1/2 Two-Column
+          //-                     p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          //-       <!--[if (gte mso 9)|(IE)]>
+          //-       </td><td width="50%" valign="top">
+          //-       <![endif]-->
+          //-       div.column-50
+          //-         table(width="100%")
+          //-           tr
+          //-             td.inner
+          //-               table.contents
+          //-                 tr
+          //-                   td
+          //-                     img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="280" alt="image")
+          //-                 tr
+          //-                   td.text
+          //-                     p.h2 1/2 Two-Column
+          //-                     p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          //-     <!--[if (gte mso 9)|(IE)]>
+          //-     </td>
+          //-     </tr>
+          //-     </table>
+          //-     <![endif]-->
 
-                      p.image
-                        a(href="https://aycl.uie.com/virtual_seminars/content_strategy_conversations")
-                          img(src="http://asset.uie.com/emails/img/ahava-slide.png" width="400" alt="Ahava First Slide")
-
-                      p In this seminar, Ahava will explain how&nbsp;to:
-
-                      ul
-                        li Create a model for delivering feedback that builds team and client&nbsp;relationships
-                        li Help clients articulate critical&nbsp;feedback
-                        li Learn what feedback is valuable to your practice, and what&nbsp;isn&rsquo;t
-                      p.button-wrapper
-                        a.button(href="https://aycl.uie.com/virtual_seminars/content_strategy_conversations") Watch This
-                      p.spacer <br><hr><br>
-                      p
-                        a(href="https://aycl.uie.com/virtual_seminars/subscribe/nav") Subscribe
-                        | &nbsp;to the All You Can Learn Library for $23/month or get access to just this recording for only&nbsp;$16.
           // footer
-          tr
-            td.one-column
-              table(width="100%")
-                tr
-                  td.inner.contents.footer
-                    p Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved. <br>
-                    p
-                      | User Interface Engineering<br>
-                      | 510 Turnpike Street<br>
-                      | Suite 102<br>
-                      | North Andover, MA 01845
-                    p
-                      a(href="*|UPDATE_PROFILE|*") manage your preferences
-                      | &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                      a(href="*|UNSUB|*") unsubscribe from this list
+          include includes/footer.pug
 
         <!--[if (gte mso 9)|(IE)]>
         </td>

@@ -1,62 +1,56 @@
-.article {
-  background-color: #222222;
-  padding-top: 20px;
-  padding-bottom: 20px; }
-  .article .webkit {
-    background-color: #F4F4F4; }
-  .article .inner {
-    padding-bottom: 0; }
-  .article .author {
-    font-size: 16px; }
-  .article .origin {
-    padding-bottom: 15px; }
-  .article .one-column {
-    padding: 20px; }
-  .article .body {
-    line-height: 1.5;
-    padding-bottom: 15px; }
-  .article .ad {
-    padding-top: 10px; }
-  .article .h2.about {
-    padding-bottom: 0;
-    margin-bottom: 0; }
-  .article .about-img {
-    padding-left: 20px; }
-  .article .about-bio .text {
-    padding-top: 0px; }
-  .article .about-bio .body {
-    color: #505050;
-    line-height: 1.75;
-    font-size: 13px; }
-  .article .share-thoughts .question {
-    color: #505050;
-    line-height: 1.75;
-    font-size: 13px; }
-  .article .share-article {
-    padding-bottom: 5px;
-    margin-bottom: 0; }
-  .article .multi-column {
-    padding-top: 0; }
-  .article .one-column.about-the-author-header {
+.aycl {
+  /*Image layout*/
+  /* One column layout */
+  /*Nested layout*/
+  /*Three column layout*/
+  /*Two column layout*/ }
+  .aycl .inner {
     padding-top: 30px;
-    border-top-color: #cccccc;
-    border-top-width: 1px;
-    border-top-style: solid; }
-  .article .multi-column.about-the-author-content {
     padding-bottom: 30px;
-    border-bottom-color: #cccccc;
-    border-bottom-width: 1px;
-    border-bottom-style: solid; }
-  .article .one-column.share-thoughts {
-    padding-bottom: 30px;
-    border-bottom-color: #cccccc;
-    border-bottom-width: 1px;
-    border-bottom-style: solid; }
-  .article .social {
-    display: inline; }
-  .article .social img {
-    width: 25px;
-    padding-right: 20px; }
+    padding-left: 30px;
+    padding-right: 30px; }
+  .aycl .block {
+    background-color: #ffffff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px; }
+  .aycl .image {
+    text-align: center; }
+  .aycl .image img {
+    max-width: 400px;
+    padding-bottom: 10px; }
+  .aycl .one-column {
+    background-color: #f3f3f3; }
+  .aycl .inner-nested {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 10px; }
+  .aycl .three-column {
+    text-align: left;
+    font-size: 0;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .aycl .two-column {
+    text-align: left;
+    font-size: 0;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .aycl .two-column .contents {
+    font-size: 14px;
+    text-align: left; }
+  .aycl .two-column .column-50 {
+    width: 100%;
+    max-width: 260px;
+    display: inline-block;
+    vertical-align: top; }
+  .aycl .two-column img {
+    width: 100%;
+    max-width: 180px;
+    height: auto; }
+  .aycl .two-column .text {
+    padding-top: 10px; }
 
 body {
   Margin: 0;
