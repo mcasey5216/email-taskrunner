@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     watch: {
       sass: {
         files: 'sass/*.scss',
@@ -18,6 +19,7 @@ module.exports = function(grunt) {
         },
       },
     },
+
     concat: {
       options: {
         separator: ';'
@@ -27,6 +29,7 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
+
     sass: {
       dist: {
         files: {
@@ -34,31 +37,36 @@ module.exports = function(grunt) {
         }
       }
     },
+
     pug: {
-          compile: {
-              options: {
-                  client: false,
-                  pretty: true,
-                  data: {
-                      debug: false
-                  }
-              },
-              files: [
-              {
-                  src: "pug/*.pug",
-                  dest: "dist/",
-                  expand: true,
-                  ext: ".html"
-              } ]
+      compile: {
+        options: {
+          client: false,
+          pretty: true,
+          data: {
+            debug: false
           }
+        },
+        files: [
+          {
+            src: "pug/*.pug",
+            dest: "dist/",
+            expand: true,
+            ext: ".html"
+          } ]
+        }
       },
+
       emailBuilder: {
-        test :{
+        inline :{
           files : [{
             expand: true,
             src: ['**/dist/pug/*.html'],
             dest: '',
-          }]
+          }],
+          options: {
+            encodeSpecialChars: true
+          }
         }
       }
   });
