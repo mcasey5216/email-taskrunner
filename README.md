@@ -3,19 +3,25 @@
 ## Dependencies
 Clone down this repository into your preferred directory.
 
-    git clone https://github.com/mcasey5216/email-taskrunner.git
+```
+git clone https://github.com/mcasey5216/email-taskrunner.git
+```
 
 [Install node.js](https://nodejs.org/en/download/)
 
 If you do not have grunt installed globally, in your terminal, from any directory, run these two commands:
 
-    sudo npm install npm -g
-    sudo npm install -g grunt-cli
-    sudo gem install sass
+```
+sudo npm install npm -g
+sudo npm install -g grunt-cli
+sudo gem install sass
+```
 
 In the main directory of this repository (where the `Gruntfile.js` is), install the dependencies.
 
-    sudo npm install
+```
+sudo npm install
+```
 
 You can run the command `grunt --help` for more options or information.
 
@@ -28,39 +34,52 @@ In the terminal from the main directory, run `grunt watch` to make and view any 
 ### Creating a New Template
 
 1. Start but duplicating the `pug/index.pug` file and rename it the name of the campaign. e.g. `pug/{campaign_name}.pug`.
-2. Make the associated sass file in `sass/_{campaign_name}.scss`.  Don't forget the underscore at the beginning of the file name
-3. In the `sass/style.scss` file add `@import '{campaign_name}';` to the top. Do not include the underscore or the `.scss` in this path name. Comment out the imports that are not in use.
-4. In the `sass/_{campaign_name}.scss` file, nest all of the contents into a larger class.  This will override general template formatting where necessary.
 
-    .aycl {
-      .inner {
-        padding: 30px;
-      }
+2. Make the associated sass file in `sass/_{campaign_name}.scss`.  Don't forget the underscore at the beginning of the file name
+
+3. In the `sass/style.scss` file add `@import '{campaign_name}';` to the top. Do not include the underscore or the `.scss` in this path name. Comment out the imports that are not in use.
+
+4. In the `sass/_{campaign_name}.scss` file, nest all of the contents into a larger class.  This will override general template formatting where necessary. Example:
+
+  ```sass
+  .aycl {
+     .inner {
+       padding: 30px;
     }
+  }
+  ```
 
 5. In the `pug/{campaign_name}.pug`, add the class the `center.wrapper` tag.  See below:
-        body
-        center.wrapper.aycl
-          div.webkit
-            table.outer(align="center")
+
+  ``` pug
+  body
+     center.wrapper.aycl
+       div.webkit
+         table.outer(align="center")
+  ```
+
 6. Edit the `{campaign_name}.pug` and `{campaign_name}.scss` file as needed.  Run `grunt` in the terminal for the compiled Mailchimp ready `HTNL` document found in `dist/pug/{campaign_name}.html`
 
 ### Standards
 
-**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths. Buttons are also pre-coded and stored in `pug/includes/button.pug`.  To use, include the mixin at the top of the file with `include includes/button.pug`, and to create the button call it in this format `+button(src, text)`.  The source and text can be hard coded or use variables relevant to the current template.
+**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths. Buttons are also pre-coded and stored in `pug/includes/button.pug`.  To use, include the mixin at the top of the file with `include includes/button.pug`, and to create the button call it in this format `+button(src, text)`.  The source and text can be hard coded or use variables relevant to the current template. [Source](https://buttons.cm/).
 
 **Pug Interpolation**: Know the difference between when to use the string interpolation, i.e. `#{ varName }` and not.  A general rule of thumb is that if it would have been in quotes if it were hard coded, it does not need the interpolation brackets.
 
 Examples
 
-    - var text = "this text"
-    - var link = "http://"
+``` pug
+- var text = "this text"
+- var link = "http://"
 
-    a(href=link) #{text}
+a(href=link) #{text}
+```
 
 will compile to
 
-    <a href="http://">that text</a>
+``` html
+<a href="http://">that text</a>
+```
 
 
 ## Bugs
