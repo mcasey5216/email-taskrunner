@@ -30,13 +30,14 @@ In the terminal from the main directory, run `grunt watch` to make and view any 
 1. Start but duplicating the `pug/index.pug` file and rename it the name of the campaign. e.g. `pug/{campaign_name}.pug`.
 2. Make the associated sass file in `sass/_{campaign_name}.scss`.  Don't forget the underscore at the beginning of the file name
 3. In the `sass/style.scss` file add `@import '{campaign_name}';` to the top. Do not include the underscore or the `.scss` in this path name. Comment out the imports that are not in use.
-4. In the `sass/_{campaign_name}.scss` file, nest all of the contents into a larger class.  e.g.
-        .aycl {
-          .inner {
-            padding: 30px;
-          }
-        }
-This will override general template formatting where necessary.
+4. In the `sass/_{campaign_name}.scss` file, nest all of the contents into a larger class.  This will override general template formatting where necessary.
+
+    .aycl {
+      .inner {
+        padding: 30px;
+      }
+    }
+
 5. In the `pug/{campaign_name}.pug`, add the class the `center.wrapper` tag.  See below:
         body
         center.wrapper.aycl
@@ -46,28 +47,20 @@ This will override general template formatting where necessary.
 
 ### Standards
 
-**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths.  
-
-    p.button-wrapper
-      a.button(href="http://") Button Content
+**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths. Buttons are also pre-coded and stored in `pug/includes/button.pug`.  To use, include the mixin at the top of the file with `include includes/button.pug`, and to create the button call it in this format `+button(src, text)`.  The source and text can be hard coded or use variables relevant to the current template.
 
 **Pug Interpolation**: Know the difference between when to use the string interpolation, i.e. `#{ varName }` and not.  A general rule of thumb is that if it would have been in quotes if it were hard coded, it does not need the interpolation brackets.
 
 Examples
 
     - var text = "this text"
-    - var linkText = "that text"
     - var link = "http://"
 
-    p.copy #{text}
-      a(href=link) #{linkText}
+    a(href=link) #{text}
 
 will compile to
 
-    <p class="copy">
-      this text
-      <a href="http://">that text</a>
-    </p>
+    <a href="http://">that text</a>
 
 
 ## Bugs

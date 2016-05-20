@@ -13,13 +13,16 @@ table {
   border-spacing: 0;
   font-family: sans-serif;
   color: $font-color;
+  border-collapse: collapse;
 }
 
 td {
   padding: 0;
+  border-collapse: collapse;
 }
 img {
   border: 0;
+  display:block;
 }
 p {
   Margin: 0;
@@ -60,6 +63,7 @@ a {
   font-size: $size;
   font-weight: $weight;
   Margin-bottom: $mbottom;
+  mso-line-height-rule: exactly;
   line-height: $lheight;
 }
 .contents .h1 {

@@ -1,3 +1,13 @@
+include includes/nested.pug
+include includes/header.pug
+include includes/button.pug
+
+- var pageTitle = "Just Added to the AYCL Library"
+- var headerSource = "http://asset.uie.com/emails/img/sample_images/sloth_header.png"
+- var headerAlt = "All You Can Learn"
+
+- var nestedSubjectLine = "Ahava Leibtag, in the All You Can Learn Library"
+
 doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
 html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
   head
@@ -22,44 +32,12 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
         <![endif]-->
         table.outer(align="center")
 
-          //- NESTED
-          tr
-            td.nested
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="70%" valign="top">
-              <![endif]-->
-              div.column-75
-                table(width="100%")
-                  tr
-                    td.inner-nested
-                      table.contents
-                        tr
-                          td.nested-text A nested subject line
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="25%" valign="top">
-              <![endif]-->
-              div.column-25
-                table(width="100%")
-                  tr
-                    td.inner-nested
-                      table.contents
-                        tr
-                          td.nested-text
-                            a View in Browser
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
+          // nested
+          +nested(nestedSubjectLine)
 
-          tr
-            td
-              table.outer(align="center")
-                tr
-                  td.full-width-image
-                    img(src="http://asset.uie.com/emails/img/sample_images/sloth_header.png" width="600" alt="header")
+          // header
+          +header(headerSource, headerAlt)
+
           tr
             td.one-column
               table(width="100%")
@@ -67,8 +45,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                   td.inner.contents
                     p.h1 100% Width Text
                     p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                    p.button-wrapper
-                      a.button(href="http://") Show me the button!
+                    +button("http//", "Button")
           tr
             td.two-column
               <!--[if (gte mso 9)|(IE)]>
@@ -88,8 +65,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 1/2 Two-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Show me the button!
+                            +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="50%" valign="top">
               <![endif]-->
@@ -105,8 +81,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 1/2 Two-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Show me the button!
+                            +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td>
               </tr>
@@ -131,8 +106,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/3 Three-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Show me the button!
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="200" valign="top">
               <![endif]-->
@@ -147,8 +121,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/3 Three-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Show me the button!
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="200" valign="top">
               <![endif]-->
@@ -163,8 +136,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/3 Three-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Show me the button!
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td>
               </tr>
@@ -189,8 +161,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/4 Four-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="150" valign="top">
               <![endif]-->
@@ -205,8 +176,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/4 Four-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="150" valign="top">
               <![endif]-->
@@ -221,8 +191,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/4 Four-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="150" valign="top">
               <![endif]-->
@@ -237,8 +206,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/4 Four-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td>
               </tr>
@@ -262,8 +230,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/5 Five-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="120" valign="top">
               <![endif]-->
@@ -278,8 +245,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/5 Five-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="120" valign="top">
               <![endif]-->
@@ -294,8 +260,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/5 Five-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="120" valign="top">
               <![endif]-->
@@ -310,8 +275,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/5 Five-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="120" valign="top">
               <![endif]-->
@@ -326,8 +290,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                         td.text
                           p.h2 1/5 Five-Column
                           p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          p.button-wrapper
-                            a.button(href="http://") Button
+                          +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td>
               </tr>
@@ -352,8 +315,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 40% Multi-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Button
+                            +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="60%" valign="top">
               <![endif]-->
@@ -369,8 +331,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 60% Multi-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Button
+                            +button("http//", "Button")
           tr
             td.multi-column
               <!--[if (gte mso 9)|(IE)]>
@@ -390,8 +351,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 30% Multi-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Button
+                            +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="70%" valign="top">
               <![endif]-->
@@ -407,8 +367,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 70% Multi-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Button
+                            +button("http//", "Button")
           tr
             td.multi-column
               <!--[if (gte mso 9)|(IE)]>
@@ -428,8 +387,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 20% Multi-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Button
+                            +button("http//", "Button")
               <!--[if (gte mso 9)|(IE)]>
               </td><td width="80%" valign="top">
               <![endif]-->
@@ -445,8 +403,7 @@ html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
                           td.text
                             p.h2 80% Multi-Column
                             p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            p.button-wrapper
-                              a.button(href="http://") Button
+                            +button("http//", "Button")
           include includes/footer.pug
 
         <!--[if (gte mso 9)|(IE)]>
