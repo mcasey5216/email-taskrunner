@@ -44,9 +44,6 @@ module.exports = function(grunt) {
                   }
               },
               files: [
-              // {
-              //     'dist/index.html': ['pug/index.pug', 'pug/includes/*.pug']
-              // },
               {
                   src: "pug/*.pug",
                   dest: "dist",
@@ -54,13 +51,23 @@ module.exports = function(grunt) {
                   ext: ".html"
               } ]
           }
-      }
+      },
+      inlinecss: {
+    		main: {
+    			options: {
+    			},
+    			files: {
+    				'dist/pug/index.html' : 'dist/pug/index.html'
+    			}
+    		}
+    	}
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-pug');
+  grunt.loadNpmTasks('grunt-inline-css');
 
 
   grunt.registerTask('default', ['sass','pug']);
