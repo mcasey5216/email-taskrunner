@@ -52,7 +52,8 @@ module.exports = function(grunt) {
             src: "pug/*.pug",
             dest: "dist/",
             expand: true,
-            ext: ".html"
+            ext: ".html",
+            flatten: true
           } ]
         }
       },
@@ -61,8 +62,10 @@ module.exports = function(grunt) {
         inline :{
           files : [{
             expand: true,
-            src: ['**/dist/pug/*.html'],
-            dest: '',
+            src: ['**/dist/*.html'],
+            dest: 'inlined/',
+            ext: '.html',
+            flatten: true
           }],
           options: {
             encodeSpecialChars: true

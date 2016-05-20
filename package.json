@@ -2,6 +2,7 @@
   "name": "my-project-name",
   "version": "0.1.0",
   "devDependencies": {
+    "cheerio": "^0.20.0",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-jade": "^1.0.0",
