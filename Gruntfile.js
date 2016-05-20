@@ -46,30 +46,30 @@ module.exports = function(grunt) {
               files: [
               {
                   src: "pug/*.pug",
-                  dest: "dist",
+                  dest: "dist/",
                   expand: true,
                   ext: ".html"
               } ]
           }
       },
-      inlinecss: {
-    		main: {
-    			options: {
-    			},
-    			files: {
-    				'dist/pug/index.html' : 'dist/pug/index.html'
-    			}
-    		}
-    	}
+      emailBuilder: {
+        test :{
+          files : [{
+            expand: true,
+            src: ['**/dist/pug/*.html'],
+            dest: '',
+          }]
+        }
+      }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-pug');
-  grunt.loadNpmTasks('grunt-inline-css');
+  grunt.loadNpmTasks('grunt-email-builder');
 
 
-  grunt.registerTask('default', ['sass','pug']);
+  grunt.registerTask('default', ['sass','pug', 'emailBuilder']);
 
 };
