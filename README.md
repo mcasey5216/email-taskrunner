@@ -62,7 +62,7 @@ In the terminal from the main directory, run `grunt watch` to make and view any 
 
 ### Standards
 
-**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths. Buttons are also pre-coded and stored in `pug/includes/button.pug`.  To use, include the mixin at the top of the file with `include includes/button.pug`, and to create the button call it in this format `+button(src, text)`.  The source and text can be hard coded or use variables relevant to the current template. [Source](https://buttons.cm/).
+**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths. Buttons are also pre-coded and stored in `pug/includes/button-red.pug`.  To use, include the mixin at the top of the file with `include includes/button.pug`, and to create the button call it in this format `+button(src, text)`.  The source and text can be hard coded or use variables relevant to the current template. [Source](https://buttons.cm/).
 
 **Pug Interpolation**: Know the difference between when to use the string interpolation, i.e. `#{ varName }` and not.  A general rule of thumb is that if it would have been in quotes if it were hard coded, it does not need the interpolation brackets.
 
