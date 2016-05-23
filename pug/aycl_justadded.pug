@@ -1,90 +1,53 @@
-include includes/nested.pug
-include includes/header.pug
+extends layout
 
-- var pageTitle = "Just Added to the AYCL Library"
-- var headerSource = "http://asset.uie.com/img/AYCL/vs-banner.png"
-- var headerAlt = "All You Can Learn"
-
-- var nestedSubjectLine = "Ahava Leibtag, in the All You Can Learn Library"
-
-mixin body
-  - var link = "https://aycl.uie.com/virtual_seminars/content_strategy_conversations"
-  div.block
-    p.h1 New in the All You Can Learn&nbsp;Library:
-    p.h2
-      a(href=link) Navigating Challenging Content Strategy&nbsp;Conversations
-    p Ahava Leibtag shares an approach for creating the right environment to give critical feedback without putting people on the&nbsp;defensive.
-
-    p.spacer <br><hr><br>
-
-    p.image
-      a(href=link)
-        img(src="http://asset.uie.com/emails/img/ahava-slide.png" width="400" alt="Ahava First Slide")
-
-    p In this seminar, Ahava will explain how&nbsp;to:
-
-    ul
-      li Create a model for delivering feedback that builds team and client&nbsp;relationships
-      li Help clients articulate critical&nbsp;feedback
-      li Learn what feedback is valuable to your practice, and what&nbsp;isn&rsquo;t
-
-    p.button-wrapper
-      a.button(href=link) Watch This
-
-    p.spacer <br><hr><br>
-
-    p
-      a(href="https://aycl.uie.com/virtual_seminars/subscribe/nav") Subscribe
-      | &nbsp;to the All You Can Learn Library for $23/month or get access to just this recording for only&nbsp;$16.
+block title
+  title Master Template
+  - var customClass='aycl'
 
 
-//- #########################################################
-//- BEGINNING OF TEMPLATE, EDIT BELOW THIS LINE WITH CAUTION
-//- #########################################################
+block content
+  - var pageTitle = "Just Added to the AYCL Library"
+  - var headerSource = "http://asset.uie.com/img/AYCL/vs-banner.png"
+  - var headerAlt = "All You Can Learn"
 
-doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
-  head
-    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
-    <!--[if !mso]><!-->
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    <!--<![endif]-->
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title #{pageTitle}
-    link(rel="stylesheet" type="text/css" href="../css/style.css")
-    <!--[if (gte mso 9)|(IE)]>
-    <style type="text/css">table {border-collapse: collapse;}</style>
-    <![endif]-->
-  body
-    style(type="text/css" media="screen")
-    center.wrapper.aycl
-      div.webkit
-        <!--[if (gte mso 9)|(IE)]>
-        <table width="600" align="center">
-        <tr>
-        <td>
-        <![endif]-->
-        table.outer(align="center")
+  - var nestedSubjectLine = "Ahava Leibtag, in the All You Can Learn Library"
 
-          // nested
-          +nested(nestedSubjectLine)
+  // nested
+  +nested(nestedSubjectLine)
 
-          // header
-          +header(headerSource, headerAlt)
+  // header
+  +header(headerSource, headerAlt)
 
-          // body
-          tr
-            td.one-column
-              table(width="100%")
-                tr
-                  td.inner.contents
-                    +body
+  // body
+  tr
+    td.one-column
+      table(width="100%")
+        tr
+          td.inner.contents
+            div.block
+              p.h1 New in the All You Can Learn&nbsp;Library:
+              p.h2
+                a(href=link) Navigating Challenging Content Strategy&nbsp;Conversations
+              p Ahava Leibtag shares an approach for creating the right environment to give critical feedback without putting people on the&nbsp;defensive.
 
-          // footer
-          include includes/footer.pug
+              p.spacer <br><hr><br>
 
-        <!--[if (gte mso 9)|(IE)]>
-        </td>
-        </tr>
-        </table>
-        <![endif]-->
+              p.image
+                a(href=link)
+                  img(src="http://asset.uie.com/emails/img/ahava-slide.png" width="400" alt="Ahava First Slide")
+
+              p In this seminar, Ahava will explain how&nbsp;to:
+
+              ul
+                li Create a model for delivering feedback that builds team and client&nbsp;relationships
+                li Help clients articulate critical&nbsp;feedback
+                li Learn what feedback is valuable to your practice, and what&nbsp;isn&rsquo;t
+
+              p.button-wrapper
+                a.button(href=link) Watch This
+
+              p.spacer <br><hr><br>
+
+              p
+                a(href="https://aycl.uie.com/virtual_seminars/subscribe/nav") Subscribe
+                | &nbsp;to the All You Can Learn Library for $23/month or get access to just this recording for only&nbsp;$16.

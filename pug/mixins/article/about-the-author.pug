@@ -1,0 +1,33 @@
+mixin aboutTheAuthor(src, author, bio)
+  tr
+    td.one-column.about-the-author-header
+      table(width="100%")
+        tr
+          td.inner.contents
+            p.h2.about About the Author
+  tr
+    td.multi-column.about-the-author-content
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="25%" valign="top">
+      <![endif]-->
+      div.column-25
+        table(width="100%")
+          tr
+            td.inner
+              table.contents.about-img
+                tr
+                  td
+                    img(src=src width="130" alt=author)
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="75%" valign="top">
+      <![endif]-->
+      div.column-75
+        table(width="100%")
+          tr
+            td.inner
+              table.contents.about-bio
+                tr
+                  td.text
+                    p.body= bio

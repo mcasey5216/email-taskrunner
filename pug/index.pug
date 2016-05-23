@@ -1,413 +1,403 @@
-include includes/nested.pug
-include includes/header.pug
-include includes/button-red.pug
+extends layout
 
-- var pageTitle = "Master Template"
-- var headerSource = "http://asset.uie.com/emails/img/sample_images/sloth_header.png"
-- var headerAlt = "Header"
+block title
+  title Master Template
 
-- var nestedSubjectLine = "Nested Subject Line"
+block content
 
-doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
-  head
-    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
-    <!--[if !mso]><!-->
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    <!--<![endif]-->
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title= pageTitle
-    link(rel="stylesheet" type="text/css" href="../css/style.css")
-    <!--[if (gte mso 9)|(IE)]>
-    <style type="text/css">table {border-collapse: collapse;}</style>
-    <![endif]-->
-  body
-    style(type="text/css" media="screen")
-    center.wrapper
-      div.webkit
-        <!--[if (gte mso 9)|(IE)]>
-        <table width="600" align="center">
-        <tr>
-        <td>
-        <![endif]-->
-        table.outer(align="center")
+  // variables
+  - var headerSource = "http://asset.uie.com/emails/img/sample_images/sloth_header.png"
+  - var headerAlt = "Header"
 
-          // nested
-          +nested(nestedSubjectLine)
+  - var nestedSubjectLine = "Nested Subject Line"
 
-          // header
-          +header(headerSource, headerAlt)
+  // nested
+  +nested(nestedSubjectLine)
 
+  // header
+  +header(headerSource, headerAlt)
+
+  //- ################################
+  //- OPTIONAL CUSTOMIZABLE TABLE ROWS
+  //- ################################
+
+  // one-column
+  tr
+    td.one-column
+      table(width="100%")
+        tr
+          td.inner.contents
+            p.h1 100% Width Text
+            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+            +buttonRed("http//", "Button")
+
+  // two-column
+  tr
+    td.two-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="50%" valign="top">
+      <![endif]-->
+      div.column-50
+        table(width="100%")
           tr
-            td.one-column
-              table(width="100%")
+            td.inner
+              table.contents
                 tr
-                  td.inner.contents
-                    p.h1 100% Width Text
-                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="280" alt="image")
+                tr
+                  td.text
+                    p.h2 1/2 Two-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                     +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="50%" valign="top">
+      <![endif]-->
+      div.column-50
+        table(width="100%")
           tr
-            td.two-column
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="50%" valign="top">
-              <![endif]-->
-              div.column-50
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="280" alt="image")
-                        tr
-                          td.text
-                            p.h2 1/2 Two-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="50%" valign="top">
-              <![endif]-->
-              div.column-50
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="280" alt="image")
-                        tr
-                          td.text
-                            p.h2 1/2 Two-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/doggy.jpg" width="280" alt="image")
+                tr
+                  td.text
+                    p.h2 1/2 Two-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
 
-          tr
-            td.three-column
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="200" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/hedgehog.jpg" width="180" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/3 Three-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="200" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/hedgehog.jpg" width="180" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/3 Three-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="200" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/hedgehog.jpg" width="180" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/3 Three-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
 
-          tr
-            td.four-column
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="150" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/4 Four-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="150" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/4 Four-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="150" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/4 Four-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="150" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/4 Four-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
-          tr
-            td.five-column
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="120" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/5 Five-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="120" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/5 Five-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="120" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/5 Five-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="120" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/5 Five-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="120" valign="top">
-              <![endif]-->
-              table.column
-                tr
-                  td.inner
-                    table.contents
-                      tr
-                        td
-                          img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
-                      tr
-                        td.text
-                          p.h2 1/5 Five-Column
-                          p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
-                          +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
-          tr
-            td.multi-column
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="40%" valign="top">
-              <![endif]-->
-              div.column-40
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="240" alt="image")
-                        tr
-                          td.text
-                            p.h2 40% Multi-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="60%" valign="top">
-              <![endif]-->
-              div.column-60
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="360" alt="image")
-                        tr
-                          td.text
-                            p.h2 60% Multi-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-          tr
-            td.multi-column
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="30%" valign="top">
-              <![endif]-->
-              div.column-30
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="180" alt="image")
-                        tr
-                          td.text
-                            p.h2 30% Multi-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="70%" valign="top">
-              <![endif]-->
-              div.column-70
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="420" alt="image")
-                        tr
-                          td.text
-                            p.h2 70% Multi-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-          tr
-            td.multi-column
-              <!--[if (gte mso 9)|(IE)]>
-              <table width="100%">
-              <tr>
-              <td width="20%" valign="top">
-              <![endif]-->
-              div.column-20
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="120" alt="image")
-                        tr
-                          td.text
-                            p.h2 20% Multi-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td width="80%" valign="top">
-              <![endif]-->
-              div.column-80
-                table(width="100%")
-                  tr
-                    td.inner
-                      table.contents
-                        tr
-                          td
-                            img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="480" alt="image")
-                        tr
-                          td.text
-                            p.h2 80% Multi-Column
-                            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            +buttonRed("http//", "Button")
-          include includes/footer.pug
+  // three-column
+  tr
+    td.three-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="200" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/hedgehog.jpg" width="180" alt="image")
+              tr
+                td.text
+                  p.h2 1/3 Three-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="200" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/hedgehog.jpg" width="180" alt="image")
+              tr
+                td.text
+                  p.h2 1/3 Three-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="200" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/hedgehog.jpg" width="180" alt="image")
+              tr
+                td.text
+                  p.h2 1/3 Three-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
 
-        <!--[if (gte mso 9)|(IE)]>
-        </td>
-        </tr>
-        </table>
-        <![endif]-->
+  // four-column
+  tr
+    td.four-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="150" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/4 Four-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="150" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/4 Four-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="150" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/4 Four-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="150" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/piggy.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/4 Four-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+
+  // five-column
+  tr
+    td.five-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="120" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/5 Five-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="120" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/5 Five-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="120" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/5 Five-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="120" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/5 Five-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="120" valign="top">
+      <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  img(img src="http://asset.uie.com/emails/img/sample_images/ducky.jpg" width="130" alt="image")
+              tr
+                td.text
+                  p.h2 1/5 Five-Column
+                  p.copy Scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                  +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+
+  // 40-60 split columns
+  tr
+    td.multi-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="40%" valign="top">
+      <![endif]-->
+      div.column-40
+        table(width="100%")
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="240" alt="image")
+                tr
+                  td.text
+                    p.h2 40% Multi-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="60%" valign="top">
+      <![endif]-->
+      div.column-60
+        table(width="100%")
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="360" alt="image")
+                tr
+                  td.text
+                    p.h2 60% Multi-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    +buttonRed("http//", "Button")
+
+  // 30-70 split columns
+  tr
+    td.multi-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="30%" valign="top">
+      <![endif]-->
+      div.column-30
+        table(width="100%")
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="180" alt="image")
+                tr
+                  td.text
+                    p.h2 30% Multi-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="70%" valign="top">
+      <![endif]-->
+      div.column-70
+        table(width="100%")
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="420" alt="image")
+                tr
+                  td.text
+                    p.h2 70% Multi-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    +buttonRed("http//", "Button")
+
+  // 20-80 split columns
+  tr
+    td.multi-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="20%" valign="top">
+      <![endif]-->
+      div.column-20
+        table(width="100%")
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="120" alt="image")
+                tr
+                  td.text
+                    p.h2 20% Multi-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    +buttonRed("http//", "Button")
+      <!--[if (gte mso 9)|(IE)]>
+      </td><td width="80%" valign="top">
+      <![endif]-->
+      div.column-80
+        table(width="100%")
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(src="http://asset.uie.com/emails/img/sample_images/bandit.jpg" width="480" alt="image")
+                tr
+                  td.text
+                    p.h2 80% Multi-Column
+                    p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    +buttonRed("http//", "Button")

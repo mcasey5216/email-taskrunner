@@ -1,0 +1,23 @@
+mixin shareThoughts(blogQ, blogURL, articleURL)
+  tr
+    td.one-column.share-thoughts
+      table(width="100%")
+        tr
+          td.inner.contents
+            p.h2 Share Your Thoughts with Us
+            p.body.question
+              | #{blogQ} Tell us about it at the&nbsp;
+              a(href=blogURL) UIE blog.
+            p.body.share-article.
+              Share This Article:
+            div.social
+              a(href=articleURL)
+                img(src="http://www.uie.com/email/img/icon-email.jpg", alt="email")
+              a(href="http://www.facebook.com/sharer/sharer.php?u=" + articleURL)
+                img(src="http://asset.uie.com/uietips/social_media_logos/facebook.png", alt="facebook")
+              a(href="http://twitter.com/?status=" + articleURL)
+                img(src="http://www.uie.com/email/img/icon-twitter-new.png", alt="twitter")
+              a(href="http://www.linkedin.com/shareArticle?mini=true&url=" + articleURL)
+                img(src="http://asset.uie.com/uietips/social_media_logos/linkedin.png", alt="linkedin")
+              a(href="https://plusone.google.com/_/+1/confirm?hl=en&url=" + articleURL)
+                img(src="http://www.uie.com/email/img/google-plus-logo.png", alt="google plus")
