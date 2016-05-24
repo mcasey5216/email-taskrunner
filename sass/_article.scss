@@ -1,7 +1,17 @@
+@import 'mixins/mixins';
+
 .article {
   background-color: #222222;
   padding-top: 20px;
   padding-bottom: 20px;
+
+  .multi-column .column-25 img {
+    @include columnImage(110px);
+  }
+
+  p {
+    line-height: 1.5;
+  }
 
   .webkit {
     background-color: #F4F4F4;
@@ -11,16 +21,18 @@
   }
   .author {
     font-size: 16px;
+    margin-bottom: 5px;
   }
   .origin {
-    padding-bottom: 15px;
+    padding-bottom: 5px;
   }
   .one-column{
     padding: 20px;
   }
-  .body {
-    line-height: 1.5;
-    padding-bottom: 15px;
+  .one-column.article-content{
+    border-bottom-color: #cccccc;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
   .ad{
     padding-top: 10px;
@@ -54,15 +66,17 @@
   }
   .one-column.about-the-author-header {
     padding-top: 30px;
-    border-top-color: #cccccc;
-    border-top-width: 1px;
-    border-top-style: solid;
+    padding-bottom:5px;
   }
   .multi-column.about-the-author-content {
     padding-bottom: 30px;
     border-bottom-color: #cccccc;
     border-bottom-width: 1px;
     border-bottom-style: solid;
+  }
+  .multi-column.about-the-author-content img{
+    padding-left:20px;
+    padding-right:20px;
   }
   .one-column.share-thoughts {
     padding-bottom: 30px;
@@ -71,10 +85,14 @@
     border-bottom-style: solid;
   }
   .social {
-    display: inline;
+    list-style-type: none;
+    padding-left:0;
+  }
+  .social li {
+    display:inline-block;
   }
   .social img {
     width:25px;
-    padding-right: 20px;
+    padding-right: 10px;
   }
 }

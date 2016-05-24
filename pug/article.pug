@@ -17,6 +17,9 @@ block content
 
   - var articleURL = "https://articles.uie.com/the-three-reasons-why-your-visitors-dont-convert/"
   - var articleTitle = "The Three Reasons Why Your Visitors Don't Convert"
+  //- if there is no original source,
+  //- simply leave blank or comment out
+  //- the following line
   - var articleOrigin = 'Originally published on <a href="">Startup Grind</a>, the global entrepreneurship community.'
 
   - var author = "Laura Klein"
@@ -33,15 +36,19 @@ block content
   +header(headerSource, headerAlt)
 
   tr
-    td.one-column
+    td.one-column.article-content
       table(width="100%")
         tr
           td.inner.contents
-            p.h1
-              a(href=articleURL) #{articleTitle}
+            p.h1 #{articleTitle}
             p.author by #{author}
-            p.origin
-              em !{articleOrigin}
+            if articleOrigin
+              p.origin
+                em !{articleOrigin}
+            p.read-on-site
+              em Read&nbsp;
+                a(href=articleURL) the article on the UIE web&nbsp;site
+                | .
 
             include includes/article-content/05_11_16.pug
 

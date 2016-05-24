@@ -2,19 +2,27 @@
   background-color: #222222;
   padding-top: 20px;
   padding-bottom: 20px; }
+  .article .multi-column .column-25 img {
+    width: 100%;
+    max-width: 110px;
+    height: auto; }
+  .article p {
+    line-height: 1.5; }
   .article .webkit {
     background-color: #F4F4F4; }
   .article .inner {
     padding-bottom: 0; }
   .article .author {
-    font-size: 16px; }
+    font-size: 16px;
+    margin-bottom: 5px; }
   .article .origin {
-    padding-bottom: 15px; }
+    padding-bottom: 5px; }
   .article .one-column {
     padding: 20px; }
-  .article .body {
-    line-height: 1.5;
-    padding-bottom: 15px; }
+  .article .one-column.article-content {
+    border-bottom-color: #cccccc;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; }
   .article .ad {
     padding-top: 10px; }
   .article .h2.about {
@@ -39,24 +47,28 @@
     padding-top: 0; }
   .article .one-column.about-the-author-header {
     padding-top: 30px;
-    border-top-color: #cccccc;
-    border-top-width: 1px;
-    border-top-style: solid; }
+    padding-bottom: 5px; }
   .article .multi-column.about-the-author-content {
     padding-bottom: 30px;
     border-bottom-color: #cccccc;
     border-bottom-width: 1px;
     border-bottom-style: solid; }
+  .article .multi-column.about-the-author-content img {
+    padding-left: 20px;
+    padding-right: 20px; }
   .article .one-column.share-thoughts {
     padding-bottom: 30px;
     border-bottom-color: #cccccc;
     border-bottom-width: 1px;
     border-bottom-style: solid; }
   .article .social {
-    display: inline; }
+    list-style-type: none;
+    padding-left: 0; }
+  .article .social li {
+    display: inline-block; }
   .article .social img {
     width: 25px;
-    padding-right: 20px; }
+    padding-right: 10px; }
 
 .aycl {
   /*Image layout*/
@@ -410,7 +422,7 @@ a {
 
 .one-column p {
   font-size: 14px;
-  Margin-bottom: 10px; }
+  Margin-bottom: 15px; }
 
 .one-column li {
   font-size: 14px;
