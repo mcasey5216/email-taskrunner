@@ -125,3 +125,116 @@ will compile to
 - css inlining - optional grunt command for testing templates
 - markdown readability
 - have the css include only include the necessary css
+
+## HTML Emails, Standards and Practices
+
+There are dozens of email clients and devices on which to view an HTML email, but there isn't a solid standard of practice on which to build them.  The following are some notes on what should and should not be done.
+
+![email clients](/images/demystifying-email-rendering.png)
+
+Graphic of different email clients. ([source](http://webdesign.tutsplus.com/tutorials/what-you-should-know-about-html-email--webdesign-12908))
+
+But these are the most common
+
+Mobile clients
+- Android 2.3 & 4.0
+- iPhone 5  iOS 6
+- iPhone 4S  iOS 6
+- iPhone 3GS  iOS 5
+- iPad 2  iOS 6
+- BlackBerry OS 4 & 5
+- Symbian S60
+- Windows Phone 7.5
+
+Desktop clients
+- Apple Mail 4, 5, 6
+- Lotus Notes 8.5
+- Lotus Notes 8
+- Thunderbird
+- Windows Live Mail
+- Outlook 2013
+- Outlook 2011 for Mac
+- Outlook 2010
+- Outlook 2007
+- Outlook 2003
+- Outlook 2002/XP
+- Outlook 2000
+
+Webmail clients
+- AOL Mail (on any browser)
+- Gmail (on any browser)
+- Outlook.com (on any browser)
+- Yahoo! (on any browser)
+
+### General Guidelines
+
+Most of the inspiration for this style of templating originates from [here](http://webdesign.tutsplus.com/tutorials/what-you-should-know-about-html-email--webdesign-12908).  Do not make any significant changes to the `layout.pug` file with referencing this link.
+
+**CSS Support and Inlining**:
+
+Some email clients, like the Gmail app, will not read media queries.  We will work with a "fluid layout". (_note, outlook will not read fluid layouts, it strips max-width attributes.  media queries should be added at a later date for full coverage_) Some sacrifices in design are made, but ultimately it is the best way to reach the most subscribers with an email that looks as close as possible to the original idea.  
+
+Most clients strip and style tags.  Styles must ultimately be inlined. MailChimp will do it for you, but to take out the ambiguity, there is a grunt task assigned this.
+
+Be careful with the inlining process.  Be sure to test every new email extensively, and run some preliminary checks on existing templates.
+
+You can not use shorthand `CSS` styles for things like `border`, `font`, or `padding`.  
+
+``` css
+table {
+  padding: 10px 20px 10px;
+}
+```
+
+becomes:
+
+``` css
+table {
+  padding-top: 10px
+  padding-bottom: 10px
+  padding-right: 20px
+  padding-left: 20px
+}
+```
+
+When setting width or height attributes, make sure to set it in the `CSS` and as an attribute on the actual tag.
+
+``` css
+// CSS
+img {
+  width: 400px;
+}
+```
+
+``` html
+// HTML
+  <img src="path/to/image.jpg" width="400" />
+```
+
+**Images**:
+
+**Unsupported Tags and Attributes**:
+
+The `div`, `section`, and `article` tags are not supported in any reliable way.  Email templates should be built in nested tables since the `colspan` and `rowspan` attributes are not consistently supported. Your largest table should be no more than 600px wide.  It is the best number to ensure your users will not have to scroll horizontally.
+
+Some clients will strip certain tags, such as `h1`, `h2`, and `h3` (as well as `p` tags in some cases), so h tags are formatted as such: `<p class="h1"> ... </p>`.  When possible, simply skip the p tag altogether. Example:
+
+``` html
+<tr>
+  <td style=“font-size: 12px; font-family: Arial, sans-serif; color: #666666;”>
+    Text
+  </td>
+</tr>
+```
+
+
+
+Many email clients turn off images by default.  Never uses an image that has crucial information in it, and always give it an `alt` attribute.  Lengthy alt text can result in it not displaying properly.  [This article](https://www.campaignmonitor.com/dev-resources/will-it-work/alt/) explains some of issues and details related to image alt text.  Alt Text can and should be styled, but there is no once size fits all solution to broken alt text, so be mindful of it's length and test its appearance.  I suggest turning images off as a default in your own email as a way to check when you send yourself tests.
+
+Always link your images, including headers.
+
+Background images are not suggested, but [here is a link](https://backgrounds.cm/) to a supposedly bulletproof way of handling it.
+
+## Notes on Pug
+
+## Notes on Grunt
