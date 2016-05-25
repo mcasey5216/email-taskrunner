@@ -1,0 +1,67 @@
+extends layout
+
+block title
+  title UIE UI21
+
+block content
+
+  // variables
+  - var headerSource = "https://ui21.uie.com/_themes/ui21/img/ui21.png"
+  - var headerAlt = "Header"
+
+  - var nestedSubjectLine = "Nested Subject Line"
+
+  include includes/ui21/content.pug
+  //- include options:
+  //- inside the "each val in speakers" are the options
+  //-   val.name
+  //-   val.img
+  //-   val.talkTitle
+  //-   val.talkLink
+  //-   val.workshopTitle
+  //-   val.workshopLink
+  //-   val.IEclose (boolean, determines when to put closing if IE tags)
+  //- if you need to call a particular person,
+  //- substiture "val" with "{first-name}" (all lowercase), example
+  //-   kim.img
+  //- that does not need to be in an each statement
+
+  // nested
+  +nested(nestedSubjectLine)
+
+  // header
+  +header(headerSource, headerAlt)
+
+  //- ################################
+  //- OPTIONAL CUSTOMIZABLE TABLE ROWS
+  //- ################################
+
+  // four-column
+  tr
+    td.four-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="150" valign="top">
+      <![endif]-->
+      each val in speakers
+        table.column
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    img(img src=val.img width="130" alt=val.name)
+                tr
+                  td.text
+                    p.h3= val.name
+        if val.IEclose
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width="150" valign="top">
+          <![endif]-->
+
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
