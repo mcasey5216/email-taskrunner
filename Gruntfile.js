@@ -20,16 +20,6 @@ module.exports = function(grunt) {
       },
     },
 
-    concat: {
-      options: {
-        separator: ';'
-      },
-      dist: {
-        src: ['js/*.js'],
-        dest: 'dist/<%= pkg.name %>.js'
-      }
-    },
-
     sass: {
       dist: {
         files: {
@@ -50,7 +40,7 @@ module.exports = function(grunt) {
         files: [
           {
             src: "pug/*.pug",
-            dest: "dist/",
+            dest: "development/",
             expand: true,
             ext: ".html",
             flatten: true
@@ -62,7 +52,7 @@ module.exports = function(grunt) {
         inline :{
           files : [{
             expand: true,
-            src: ['**/dist/*.html'],
+            src: ['**/development/*.html'],
             dest: 'inlined/',
             ext: '.html',
             flatten: true
