@@ -213,10 +213,10 @@ becomes:
 
 ``` css
 table {
-  padding-top: 10px
-  padding-bottom: 10px
-  padding-right: 20px
-  padding-left: 20px
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 ```
 
@@ -231,7 +231,7 @@ img {
 
 ``` html
 // HTML
-  <img src="path/to/image.jpg" width="400" />
+<img src="path/to/image.jpg" width="400" />
 ```
 
 **Images**:
