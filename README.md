@@ -1,5 +1,28 @@
 # HTML Email Template-making and Taskrunner
 
+This app is designed to help make html email templates through pug (formerly known as jade) and sass files, executed through a simple command line interface.  This app will compile the pug and sass files into html and css respectively.  It will also inline the css and encode special characters so it is ready for a email deployment system (in our case, MailChimp).
+
+## Table of Contents
+
+1. Dependencies
+2. How to Use
+  1. Creating a New Template
+  2. Standards  
+    1. Nested
+    2. Header
+    3. Fotter
+    4. Buttons
+    5. Pug Interpolation
+3. Bugs
+4. Todo
+5. HtmL Emails, Standards and Practices
+  1. General Guidelines
+    1. CSS Support and Inlining
+    2. Images
+    3. Unsupported Tags and Attributes
+6. Notes on Pug
+7. Notes on Sass
+
 ## Dependencies
 Clone down this repository into your preferred directory.
 
@@ -29,7 +52,7 @@ Emails are written in `pug` format.  See more [here for syntax](http://jade-lang
 
 ## How to Use
 
-In the command line of the main directory, run `$ grunt`.  To edit files, open the desired campaign html file created by grunt located in `dist/{campaign_name}.html` in a browser window.  In the command line, run `$ grunt watch`.  Any files in the main directories of `pug/` or `sass/` that are changed and saved while `grunt watch` is running will be recompiled and reflected in the associate `dist/` files.  To exit `grunt watch` hit `command + c`.  To get the final inlined template, run `$ grunt` in the command line.  The file will be located in `inlined/{campaign_name}.html`.
+In the command line of the main directory, run `$ grunt`.  To edit files, open the desired campaign html file created by grunt located in `dist/{campaign_name}.html` in a browser window.  In the command line, run `$ grunt watch`.  Any files in the main directories of `pug/` or `sass/` that are changed and saved while `grunt watch` is running will be recompiled and reflected in the associate `dist/` files.  To exit `grunt watch` hit `control + c`.  To get the final inlined template, run `$ grunt` in the command line.  The file will be located in `inlined/{campaign_name}.html`.
 
 ### Creating a New Template
 
