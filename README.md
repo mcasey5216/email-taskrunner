@@ -35,15 +35,15 @@ $ git clone https://github.com/mcasey5216/email-taskrunner.git
 If you do not have grunt or sass installed globally, in your terminal, from any directory, run these commands:
 
 ```
-$ sudo npm install npm -g
-$ sudo npm install -g grunt-cli
-$ sudo gem install sass
+$ npm install npm -g
+$ npm install -g grunt-cli
+$ gem install sass
 ```
 
 In the main directory of this repository (where the `Gruntfile.js` is), install the dependencies.
 
 ```
-$ sudo npm install
+$ npm install
 ```
 
 You can run the command `grunt --help` for more options or information.
