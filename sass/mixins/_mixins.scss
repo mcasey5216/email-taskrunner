@@ -26,11 +26,11 @@ $uie-red: #951a1d;
   text-align: left;
 }
 
-@mixin button($bg-color, $border-color, $text-size, $button-width) {
+@mixin button($bg-color, $border-color, $text-size, $button-width, $text-color) {
   background-color:$bg-color;
   border:1px solid $border-color;
   border-radius:4px;
-  color:#ffffff;
+  color:$text-color;
   display:inline-block;
   font-family:sans-serif;
   font-size:$text-size;

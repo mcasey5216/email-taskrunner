@@ -2,6 +2,7 @@
 
 @import 'article';
 @import 'aycl_justadded';
+@import 'ui21';
 
 body {
   Margin: 0;
@@ -85,37 +86,37 @@ a {
   text-align: center;
 }
 .one-column .button {
-  @include button($uie-red, #1e3650, 14px, 300px);
+  @include button($uie-red, #1e3650, 14px, 300px, $bg-color);
 }
 .two-column .button {
-  @include button($uie-red, #1e3650, 14px, 250px);
+  @include button($uie-red, #1e3650, 14px, 250px, $bg-color);
 }
 .three-column .button {
-  @include button($uie-red, #1e3650, 14px, 165px);
+  @include button($uie-red, #1e3650, 14px, 165px, $bg-color);
 }
 .four-column .button {
-  @include button($uie-red, #1e3650, 14px, 125px);
+  @include button($uie-red, #1e3650, 14px, 125px, $bg-color);
 }
 .five-column .button {
-  @include button($uie-red, #1e3650, 14px, 100px);
+  @include button($uie-red, #1e3650, 14px, 100px, $bg-color);
 }
 .multi-column .column-20 .button {
-  @include button($uie-red, #1e3650, 14px, 100px);
+  @include button($uie-red, #1e3650, 14px, 100px, $bg-color);
 }
 .multi-column .column-30 .button {
-  @include button($uie-red, #1e3650, 14px, 130px);
+  @include button($uie-red, #1e3650, 14px, 130px, $bg-color);
 }
 .multi-column .column-40 .button {
-  @include button($uie-red, #1e3650, 14px, 180px);
+  @include button($uie-red, #1e3650, 14px, 180px, $bg-color);
 }
 .multi-column .column-60 .button {
-  @include button($uie-red, #1e3650, 14px, 285px);
+  @include button($uie-red, #1e3650, 14px, 285px, $bg-color);
 }
 .multi-column .column-70 .button {
-  @include button($uie-red, #1e3650, 14px, 300px);
+  @include button($uie-red, #1e3650, 14px, 300px, $bg-color);
 }
 .multi-column .column-80 .button {
-  @include button($uie-red, #1e3650, 14px, 300px);
+  @include button($uie-red, #1e3650, 14px, 300px, $bg-color);
 }
 /*Nested layout*/
 .nested {

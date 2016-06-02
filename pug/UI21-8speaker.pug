@@ -2,11 +2,12 @@ extends layout
 
 block title
   title UIE UI21
+  - var customClass='ui21'
 
 block content
 
   // variables
-  - var headerSource = "https://ui21.uie.com/_themes/ui21/img/ui21.png"
+  - var headerSource = "http://asset.uie.com/ui21/email-banner.png"
   - var headerAlt = "Header"
 
   - var nestedSubjectLine = "Nested Subject Line"
@@ -36,6 +37,26 @@ block content
   //- OPTIONAL CUSTOMIZABLE TABLE ROWS
   //- ################################
 
+  // one-column
+  tr
+    td.one-column
+      table(width="100%")
+        tr
+          td.inner.contents
+            p.h1 UI21 Conference
+            p.copy Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+
+  //- ################################
+  //- WORKSHOP - 8 PERSON LAYOUT
+  //- ################################
+  // one-column
+  tr
+    td.one-column
+      table(width="100%")
+        tr
+          td.inner.contents
+            p.h2 Workshops
+
   // four-column
   tr
     td.four-column
@@ -51,17 +72,67 @@ block content
               table.contents
                 tr
                   td
-                    img(img src=val.img width="130" alt=val.name)
+                    a(href=val.workshopLink)
+                      img(img src=val.img width="130" alt=val.name)
                 tr
                   td.text
-                    p.h3= val.name
+                    a(href=val.workshopLink)
+                      p.h4= val.workshopTitle
+                    p= val.name
         if val.IEclose
           <!--[if (gte mso 9)|(IE)]>
           </td><td width="150" valign="top">
           <![endif]-->
+
+
 
       <!--[if (gte mso 9)|(IE)]>
       </td>
       </tr>
       </table>
       <![endif]-->
+
+
+  //- ################################
+  //- FEATURED TALKS - 9 PERSON LAYOUT
+  //- ################################
+  // one-column
+  tr
+    td.one-column
+      table(width="100%")
+        tr
+          td.inner.contents
+            p.h2 Workshops
+
+  // three-column
+  tr
+    td.three-column
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="100%">
+      <tr>
+      <td width="200" valign="top">
+      <![endif]-->
+      each val in speakers
+        table.column
+          tr
+            td.inner
+              table.contents
+                tr
+                  td
+                    a(href=val.workshopLink)
+                      img(img src=val.img width="130" alt=val.name)
+                tr
+                  td.text
+                    a(href=val.workshopLink)
+                      p.h4= val.workshopTitle
+                    p= val.name
+        <!--[if (gte mso 9)|(IE)]>
+        </td><td width="150" valign="top">
+        <![endif]-->
+
+  tr
+    td.one-column
+      table(width="100%")
+        tr
+          td.inner.contents
+            +buttonUI21("http//", "Click Here")

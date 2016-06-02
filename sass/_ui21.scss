@@ -1,0 +1,14 @@
+@import 'mixins/mixins';
+
+.ui21 {
+  $ui21Gold: #fbbd1a;
+  $ui21Black: #222222;
+  $ui21Red: #ca2f47;
+
+  a {
+    color: $ui21Red;
+  }
+  .one-column .button {
+    @include button($ui21Gold, $ui21Gold, 18px, 300px, $ui21Black);
+  }
+}
