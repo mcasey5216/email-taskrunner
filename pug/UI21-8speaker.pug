@@ -34,7 +34,7 @@ block content
   +header(headerSource, headerAlt)
 
   //- ################################
-  //- OPTIONAL CUSTOMIZABLE TABLE ROWS
+  //- OPENING TEXT
   //- ################################
 
   // one-column
@@ -102,7 +102,7 @@ block content
       table(width="100%")
         tr
           td.inner.contents
-            p.h2 Workshops
+            p.h2 Featued Talk
 
   // three-column
   tr
@@ -119,17 +119,38 @@ block content
               table.contents
                 tr
                   td
-                    a(href=val.workshopLink)
+                    a(href=val.talkLink)
                       img(img src=val.img width="130" alt=val.name)
                 tr
                   td.text
-                    a(href=val.workshopLink)
-                      p.h4= val.workshopTitle
+                    a(href=val.talkLink)
+                      p.h4= val.talkTitle
                     p= val.name
         <!--[if (gte mso 9)|(IE)]>
         </td><td width="150" valign="top">
         <![endif]-->
+      table.column
+        tr
+          td.inner
+            table.contents
+              tr
+                td
+                  a(href=jared.talkLink)
+                    img(img src=jared.img width="130" alt=jared.name)
+              tr
+                td.text
+                  a(href=jared.talkLink)
+                    p.h4= jared.talkTitle
+                  p= jared.name
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
 
+  //- ################################
+  //- BUTTON
+  //- ################################
   tr
     td.one-column
       table(width="100%")
