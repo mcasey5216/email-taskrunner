@@ -6,8 +6,9 @@ This app is designed to help make html email templates through pug (formerly kno
 
 1. Dependencies
 2. How to Use
-  1. Creating a New Template
-  2. Standards  
+  1. How it Works
+  2. Creating a New Template
+  3. Standards  
     1. Nested
     2. Header
     3. Fotter
