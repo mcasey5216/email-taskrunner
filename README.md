@@ -1,6 +1,6 @@
 # HTML Email Template-making and Taskrunner
 
-This app is designed to help make html email templates through pug (formerly known as jade) and sass files, executed through a simple command line interface.  This app will compile the pug and sass files into html and css respectively.  It will also inline the css and encode special characters so it is ready for a email deployment system (in our case, MailChimp).
+This app is designed to help make html email templates through pug (formerly known as jade) and sass files, executed through a simple command line interface.  This app will compile the pug and sass files into html and css respectively.  It will also inline the css and encode special characters so it is ready for an email deployment system (in our case, MailChimp).
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@ This app is designed to help make html email templates through pug (formerly kno
   3. Standards  
     1. Nested
     2. Header
-    3. Fotter
+    3. Footer
     4. Buttons
     5. Pug Interpolation
 3. Bugs
@@ -21,8 +21,6 @@ This app is designed to help make html email templates through pug (formerly kno
     1. CSS Support and Inlining
     2. Images
     3. Unsupported Tags and Attributes
-6. Notes on Pug
-7. Notes on Sass
 
 ## Dependencies
 Clone down this repository into your preferred directory.
@@ -53,7 +51,22 @@ Emails are written in `pug` format.  See more [here for syntax](http://jade-lang
 
 ## How to Use
 
-In the command line of the main directory, run `$ grunt`.  To edit files, open the desired campaign html file created by grunt located in `dist/{campaign_name}.html` in a browser window.  In the command line, run `$ grunt watch`.  Any files in the main directories of `pug/` or `sass/` that are changed and saved while `grunt watch` is running will be recompiled and reflected in the associate `dist/` files.  To exit `grunt watch` hit `control + c`.  To get the final inlined template, run `$ grunt` in the command line.  The file will be located in `inlined/{campaign_name}.html`.
+### How it Works
+
+This program runs its tasks via grunt.  If you are unfamiliar with grunt, [see here to get started](http://gruntjs.com/getting-started).  The two main commands are `$ grunt` and `$ grunt watch`, which is detailed below.  To see other options, run `$ grunt --help` in the command line.
+
+**`$ grunt` vs. `$ grunt watch`**
+
+All grunt commands need to be made from the main directory where the grunt file lives.
+
+`$ grunt` runs the default grunt task seen here.
+
+``` javascript
+grunt.registerTask('default', ['sass','pug', 'emailBuilder']);
+```
+It will, in that order, compile the sass into the `css/style.css` file, compile all pug files into html files of the same name in the `development/` directory, and finally inline and encode special characters into html files in the `inline/` directory.  This command only needs to be used when you are ready for client testing or when you are ready for MailChimp deployment.
+
+`$ grunt watch` runs the sass and pug compiling only, and runs continuously until it is manually turned off. This is used for viewing your templates in a browser during development.  It will watch for any changes made in the sass directory, and any changes made to the pug files _that are in the main directory only_ (see Bugs section).  Be sure to view the files in the `development/` directory when watching files.  Live reload is currently not working (see Bugs section), so you must refresh the page once grunt watch has recognized the changes.  All changes are not recognized until the watched file is saved.  To exit grunt watch hit `control + c`.
 
 ### Creating a New Template
 
@@ -116,7 +129,7 @@ In the command line of the main directory, run `$ grunt`.  To edit files, open t
 
 **Footer**: The footer is included in the `pug/layout.pug` file and accepts no variables.  For reference, it is located here: `pug/includes/footer.pug`
 
-**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths. Buttons are also pre-coded and stored in `pug/mixins/buttons/`.  To use, call it in this format `+button(src, text)`.  If you are making a new button, be sure to include it at the top of the `pug/layout.pug` file. [Source](https://buttons.cm/).
+**Buttons**: Buttons are preformatted in the main `sass/style.scss` for the varying table cell widths. Buttons are also pre-coded and stored in `pug/mixins/buttons/`.  To use, call it in this format `+{buttonName}(src, text)`... example `+buttonRed("http//", "Button")`.  If you are making a new button, be sure to include it at the top of the `pug/layout.pug` file. [Source](https://buttons.cm/).
 
 **Pug Interpolation**: Know the difference between when to use the string interpolation, i.e. `#{ varName }` and not.  A general rule of thumb is that if it would have been in quotes if it were hard coded, it does not need the interpolation brackets.
 
@@ -135,20 +148,21 @@ will compile to
 <a href="http://">that text</a>
 ```
 
+However it is most reliable when not using the interpolation brackets.  The below example will compile to the same thing.
+
+``` pug
+- var text = "this text"
+- var link = "http://"
+
+a(href=link)= text
+```
 
 ## Bugs
 - livereload in grunt watch is not working
-
-## Concerns
-- Is this overly complicated still, is there an even simpler way to run these tasks?
-- Is this beneficial to "one time" emails, or better for long lasting reoccurring campaigns?
-- How do I fix the file structure so it will only run what needs to be run?
+- grunt watch only sees changes in the main pug directory, and none that are nested in folders
 
 ## Todo
-- [html entities](https://www.npmjs.com/package/grunt-htmlentities)
-- css inlining - optional grunt command for testing templates
 - markdown readability
-- have the css include only include the necessary css
 
 ## HTML Emails, Standards and Practices
 
@@ -256,7 +270,3 @@ Some clients will strip certain tags, such as `h1`, `h2`, and `h3` (as well as `
   </td>
 </tr>
 ```
-
-## Notes on Pug
-
-## Notes on Grunt
